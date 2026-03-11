@@ -4,11 +4,10 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "Início", href: "#inicio" },
   { label: "Quem Somos", href: "#quem-somos" },
   { label: "Soluções", href: "#solucoes" },
-  { label: "Time", href: "#time" },
   { label: "Cases", href: "#cases" },
+  { label: "Diferenciais", href: "#diferenciais" },
   { label: "Contato", href: "#contato" },
 ];
 
@@ -17,9 +16,9 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
-      <div className="container mx-auto flex items-center justify-between h-20 px-6">
+      <div className="container mx-auto flex items-center justify-between h-20 px-6 max-w-[2560px]">
         {/* Logo */}
-        <a href="#inicio" className="flex items-center gap-2">
+        <a href="#inicio" className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
             <span className="text-primary-foreground font-display font-bold text-lg">W3</span>
           </div>
@@ -29,12 +28,12 @@ const Header = () => {
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+              className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
             >
               {link.label}
             </a>
@@ -43,7 +42,7 @@ const Header = () => {
 
         {/* CTA */}
         <div className="hidden lg:block">
-          <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold px-6">
+          <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold px-6 rounded-full">
             Fale Conosco
           </Button>
         </div>
@@ -77,7 +76,7 @@ const Header = () => {
                   {link.label}
                 </a>
               ))}
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 w-full mt-2">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 w-full mt-2 rounded-full">
                 Fale Conosco
               </Button>
             </nav>
