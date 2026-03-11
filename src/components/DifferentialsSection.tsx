@@ -9,27 +9,26 @@ const metrics = [
   { icon: Globe, value: "15+", label: "Estados atendidos no Brasil" },
 ];
 
-const ResultsSection = () => {
+const DifferentialsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 lg:py-32 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/20 to-background" />
-
-      <div className="container mx-auto px-6 relative z-10" ref={ref}>
+    <section id="diferenciais" className="py-24 lg:py-32 relative">
+      <div className="container mx-auto px-6 max-w-7xl" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-6"
         >
-          <span className="text-primary font-semibold text-sm tracking-widest uppercase mb-4 block">
-            Resultados
-          </span>
-          <h2 className="font-display text-3xl md:text-5xl font-bold">
-            Nossos <span className="text-primary">números</span>
+          <h2 className="font-display text-2xl md:text-4xl font-bold max-w-3xl mx-auto leading-tight mb-4">
+            Não somos apenas prestadores de serviço.{" "}
+            <span className="text-primary">Somos o seu time</span> de crescimento.
           </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-16">
+            Cada decisão é pensada para gerar impacto real no seu faturamento.
+          </p>
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -56,4 +55,4 @@ const ResultsSection = () => {
   );
 };
 
-export default ResultsSection;
+export default DifferentialsSection;
